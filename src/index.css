@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Quill Custom Styles */
+.quill-container .ql-toolbar.ql-snow {
+  border: none !important;
+  background: #f9fafb !important;
+  padding: 1rem !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.quill-container .ql-container.ql-snow {
+  border: none !important;
+  min-height: 300px !important;
+  font-size: 1.125rem !important;
+  font-family: inherit !important;
+}
+
+.quill-container .ql-editor {
+  padding: 1.5rem !important;
+  text-align: right !important;
+}
+
+.quill-container .ql-editor.ql-blank::before {
+  right: 1.5rem !important;
+  left: auto !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  color: #9ca3af !important;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-zinc-900 bg-zinc-50 font-sans;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+}
+
+.prose {
+  @apply text-zinc-700 leading-relaxed;
+}
+
+.prose h1 {
+  @apply text-3xl font-black text-zinc-900 mb-6 tracking-tight;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold text-zinc-900 mt-8 mb-4 tracking-tight border-r-4 border-indigo-500 pr-4;
+}
+
+.prose h3 {
+  @apply text-xl font-bold text-zinc-800 mt-6 mb-3;
+}
+
+.prose p {
+  @apply mb-5 leading-relaxed text-lg;
+}
+
+.prose ul, .prose ol {
+  @apply my-6 space-y-3 pr-6;
+}
+
+.prose li {
+  @apply relative;
+}
+
+.prose strong {
+  @apply font-bold text-zinc-900;
+}
